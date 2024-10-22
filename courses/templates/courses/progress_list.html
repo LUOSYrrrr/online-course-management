@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Progress</h2>
+<ul>
+  {% for p in progress %}
+    <li>{{ p.enrollment.course.name }}: {{ p.progress }}% - Grade: {{ p.grade }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -22,4 +22,5 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('courses/', include('courses.urls')),  # 包含 courses app 的路由
+    path('accounts/', include('django.contrib.auth.urls')),  # 添加这一行
 ]

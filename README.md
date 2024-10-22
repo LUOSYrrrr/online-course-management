@@ -138,3 +138,123 @@ css
 复制代码
 Welcome to the Courses App!
 ```
+
+## **每个 URL 的访问说明**
+
+### 1. **课程列表**
+
+- **URL:** `/courses/`
+- **视图函数:** `course_list`
+- **功能:** 显示所有课程的列表，包括课程的名称和简介。
+
+#### **示例：**
+
+- **访问路径:** http://127.0.0.1:8000/courses/
+
+- 预期结果:
+
+  ```
+  text
+  
+  
+  复制代码
+  - Introduction to Python
+  - Data Structures
+  - Calculus I
+  ```
+
+------
+
+### 2. **课程详情**
+
+- **URL:** `/courses/<course_id>/`
+- **视图函数:** `course_detail`
+- **功能:** 显示单个课程的详细信息，如课程描述、教师、开始和结束日期等。
+
+#### **示例：**
+
+- **访问路径:** http://127.0.0.1:8000/courses/1/
+
+- 预期结果:
+
+  ```
+  vbnet
+  
+  
+  复制代码
+  Course: Introduction to Python
+  Instructor: Bob
+  Duration: 40 hours
+  Description: Learn the basics of Python programming.
+  ```
+
+------
+
+### 3. **注册课程**
+
+- **URL:** `/courses/<course_id>/enroll/`
+- **视图函数:** `enroll_in_course`
+- **功能:** 学生注册选定的课程。
+
+#### **示例：**
+
+- **访问路径:** http://127.0.0.1:8000/courses/1/enroll/
+
+- 预期结果:
+
+  ```
+  css
+  
+  
+  复制代码
+  Successfully enrolled in Introduction to Python.
+  ```
+
+------
+
+### 4. **查看学生进度**
+
+- **URL:** `/courses/<course_id>/progress/`
+- **视图函数:** `view_progress`
+- **功能:** 查看当前用户在选定课程中的学习进度和成绩。
+
+#### **示例：**
+
+- **访问路径:** http://127.0.0.1:8000/courses/1/progress/
+
+- 预期结果:
+
+  ```
+  makefile
+  
+  
+  复制代码
+  Student: Alice
+  Progress: 85.5%
+  Grade: A
+  ```
+
+------
+
+## **管理员后台**
+
+- **URL:** `/admin/`
+- **功能:** 管理员可以通过 Django 后台管理用户、课程和注册信息。
+
+#### **示例：**
+
+- **访问路径:** http://127.0.0.1:8000/admin/
+- 预期结果:
+  - 通过管理员账号登录，管理数据。
+
+------
+
+## **每个 URL 的作用总结**
+
+| URL                              | 访问路径         | 功能描述                     |
+| -------------------------------- | ---------------- | ---------------------------- |
+| `/courses/`                      | 课程列表页面     | 查看所有课程                 |
+| `/courses/<course_id>/`          | 单个课程详情页面 | 查看课程的详细信息           |
+| `/courses/<course_id>/enroll/`   | 课程注册页面     | 学生注册课程                 |
+| `/courses/<course_id>/progress/` | 学生进度页面     | 查看学生的课程学习进度和成绩 |
+| `/admin/`                        | Django 管理后台  | 管理员登录并管理数据         |
